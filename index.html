@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Automotriz</title>
+    <style>
+        /* Estilos generales y efecto de deslizamiento suave */
+        html {
+            scroll-behavior: smooth; /* Esto hace que baje suavemente sin saltos bruscos */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* --------------------------------------------------
+           PANTALLA DE BIENVENIDA (PORTADA PRINCIPAL)
+        ----------------------------------------------------- */
+        .pantalla-bienvenida {
+            width: 100%;
+            height: 100vh; /* Ocupa exactamente el alto de la pantalla */
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), url('portada.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .bienvenida-titulo {
+            font-size: 3rem;
+            color: #ffffff;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.7);
+            margin: 0 0 10px 0;
+        }
+
+        .bienvenida-subtitulo {
+            font-size: 1.3rem;
+            color: #38bdf8;
+            margin: 0 0 30px 0;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Botón de Continuar (ahora es un enlace estilizado) */
+        .btn-continuar {
+            background-color: #38bdf8;
+            color: #0f172a;
+            text-decoration: none; /* Quita la línea de abajo del enlace */
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+            transition: transform 0.2s ease, background-color 0.2s;
+        }
+
+        .btn-continuar:active {
+            transform: scale(0.95);
+        }
+
+        /* --------------------------------------------------
+           CONTENIDO PRINCIPAL (GALERÍA DE CARROS)
+        ----------------------------------------------------- */
+        /* Este ID recibe el salto desde el botón */
+        #galeria-seccion {
+            padding-top: 40px; 
+        }
+
+        .header-seccion {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #38bdf8;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+
+        .galeria-contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+            padding: 10px;
+        }
+
+        .carro-tarjeta {
+            background-color: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        .carro-tarjeta img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carro-info {
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA PRINCIPAL (PURA HTML/CSS) -->
+    <div class="pantalla-bienvenida">
+        <h2 class="bienvenida-titulo">¡Bienvenido al Garaje!</h2>
+        <p class="bienvenida-subtitulo">Descubre la potencia y el diseño sobre ruedas</p>
+        <!-- El href apuntando a #galeria-seccion hace la magia de bajar -->
+        <a href="#galeria-seccion" class="btn-continuar">Continuar</a>
+    </div>
+
+    <!-- CONTENIDO DE LA GALERÍA -->
+    <div id="galeria-seccion">
+        <div class="header-seccion">
+            <h1>Galería de Imágenes de Carros</h1>
+            <p>
+                El diseño automotriz es el proceso de desarrollo de la apariencia y la estética de los vehículos de motor. 
+                Combina la ingeniería, la aerodinámica y el arte para crear máquinas funcionales y visualmente impactantes. 
+                A continuación, se presenta una colección de 10 ejemplares que representan la evolución, la velocidad y la elegancia sobre ruedas.
+            </p>
+        </div>
+
+        <div class="galeria-contenedor">
+            <!-- Las 10 tarjetas de los carros -->
+            <div class="carro-tarjeta"><img src="carro1.jpg" alt="Carro 1"><div class="carro-info">Deportivo Moderno</div></div>
+            <div class="carro-tarjeta"><img src="carro2.jpg" alt="Carro 2"><div class="carro-info">Clásico Vintage</div></div>
+            <div class="carro-tarjeta"><img src="carro3.jpg" alt="Carro 3"><div class="carro-info">Superdeportivo Exótico</div></div>
+            <div class="carro-tarjeta"><img src="carro4.jpg" alt="Carro 4"><div class="carro-info">Sedán de Lujo</div></div>
+            <div class="carro-tarjeta"><img src="carro5.jpg" alt="Carro 5"><div class="carro-info">Todoterreno 4x4</div></div>
+            <div class="carro-tarjeta"><img src="carro6.jpg" alt="Carro 6"><div class="carro-info">Eléctrico Futurista</div></div>
+            <div class="carro-tarjeta"><img src="carro7.jpg" alt="Carro 7"><div class="carro-info">Alta Competencia</div></div>
+            <div class="carro-tarjeta"><img src="carro8.jpg" alt="Carro 8"><div class="carro-info">Muscle Car Americano</div></div>
+            <div class="carro-tarjeta"><img src="carro9.jpg" alt="Carro 9"><div class="carro-info">Compacto Urbano</div></div>
+            <div class="carro-tarjeta"><img src="carro10.jpg" alt="Carro 10"><div class="carro-info">Hiperdeportivo Conceptual</div></div>
+        </div>
+    </div>
+
+</body>
+</html>
