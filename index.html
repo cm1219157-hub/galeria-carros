@@ -7,7 +7,7 @@
     <style>
         /* Estilos generales y efecto de deslizamiento suave */
         html {
-            scroll-behavior: smooth; /* Esto hace que baje suavemente sin saltos bruscos */
+            scroll-behavior: smooth;
         }
 
         body {
@@ -24,7 +24,7 @@
         ----------------------------------------------------- */
         .pantalla-bienvenida {
             width: 100%;
-            height: 100vh; /* Ocupa exactamente el alto de la pantalla */
+            height: 100vh;
             background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), url('portada.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
@@ -48,17 +48,16 @@
             text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
 
-        /* Botón de Continuar (ahora es un enlace estilizado) */
         .btn-continuar {
             background-color: #38bdf8;
             color: #0f172a;
-            text-decoration: none; /* Quita la línea de abajo del enlace */
+            text-decoration: none;
             padding: 15px 40px;
             font-size: 1.2rem;
             font-weight: bold;
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
-            transition: transform 0.2s ease, background-color 0.2s;
+            transition: transform 0.2s ease;
         }
 
         .btn-continuar:active {
@@ -66,9 +65,8 @@
         }
 
         /* --------------------------------------------------
-           CONTENIDO PRINCIPAL (GALERÍA DE CARROS)
+           CONTENIDO PRINCIPAL (CATÁLOGO DE EXPOSICIÓN)
         ----------------------------------------------------- */
-        /* Este ID recibe el salto desde el botón */
         #galeria-seccion {
             padding-top: 40px; 
         }
@@ -91,51 +89,86 @@
             color: #cbd5e1;
         }
 
+        /* Cuadrícula de tarjetas */
         .galeria-contenedor {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             max-width: 1200px;
-            margin: 0 auto 50px auto;
-            padding: 10px;
+            margin: 0 auto 60px auto;
+            padding: 15px;
         }
 
+        /* Tarjeta del Vehículo */
         .carro-tarjeta {
             background-color: #1e293b;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border: 1px solid #334155;
         }
 
         .carro-tarjeta img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
             display: block;
         }
 
-        .carro-info {
-            padding: 15px;
+        /* Ficha Técnica (Tabla de especificaciones corregida y alineada) */
+        .carro-ficha {
+            padding: 20px;
+        }
+
+        .carro-nombre {
+            font-size: 1.4rem;
             font-weight: bold;
-            font-size: 1rem;
-            color: #38bdf8;
+            color: #ffffff;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 5px;
+            text-align: center; /* El nombre se queda centrado */
+        }
+
+        .detalles-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        .detalles-tabla td {
+            padding: 8px 0;
+            color: #cbd5e1;
+        }
+
+        .detalles-tabla td.label {
+            font-weight: 600;
+            color: #94a3b8; 
+            text-align: left; /* Palabras a la izquierda */
+            width: 40%;
+        }
+
+        .detalles-tabla td.valor {
+            text-align: right; /* Datos numéricos a la derecha */
+            font-weight: bold;
+            color: #38bdf8; 
+            width: 60%;
         }
     </style>
 </head>
 <body>
 
-    <!-- PORTADA PRINCIPAL (PURA HTML/CSS) -->
+    <!-- PORTADA PRINCIPAL COMPLETA -->
     <div class="pantalla-bienvenida">
-        <h2 class="bienvenida-titulo">¡Bienvenido al Garaje!</h2>
-        <p class="bienvenida-subtitulo">Descubre la potencia y el diseño sobre ruedas</p>
-        <!-- El href apuntando a #galeria-seccion hace la magia de bajar -->
+        <h2 class="bienvenida-titulo">Mundo Automotriz</h2>
+        <p class="bienvenida-subtitulo">Colección de 10 ejemplares destacados en ingeniería y diseño</p>
         <a href="#galeria-seccion" class="btn-continuar">Continuar</a>
     </div>
 
     <!-- CONTENIDO DE LA GALERÍA -->
     <div id="galeria-seccion">
         <div class="header-seccion">
-            <h1>Galería de Imágenes de Carros</h1>
             <p>
                 El diseño automotriz es el proceso de desarrollo de la apariencia y la estética de los vehículos de motor. 
                 Combina la ingeniería, la aerodinámica y el arte para crear máquinas funcionales y visualmente impactantes. 
@@ -144,29 +177,137 @@
         </div>
 
         <div class="galeria-contenedor">
-            <!-- Las 10 tarjetas de los carros -->
+
+            <!-- Carro 1: Tu Lamborghini Real -->
             <div class="carro-tarjeta">
-    <img src="carro1.jpg" alt="Lamborghini Huracán Tecnica">
-    <div class="carro-ficha">
-        <div class="carro-nombre">Lamborghini Huracán Tecnica</div>
-        <table class="detalles-tabla">
-            <tr><td class="label">Color:</td><td class="valor">Blu Astraeus (Azul Oscuro)</td></tr>
-            <tr><td class="label">Potencia:</td><td class="valor">640 HP</td></tr>
-            <tr><td class="label">Precio:</td><td class="valor">$240,000 USD</td></tr>
-        </table>
-    </div>
+                <img src="carro1.jpg" alt="Lamborghini Huracán Tecnica">
+                <div class="carro-ficha">
+                    <div class="carro-nombre">Lamborghini Huracán Tecnica</div>
+                    <table class="detalles-tabla">
+                        <tr><td class="label">Color:</td><td class="valor">Blu Astraeus (Azul)</td></tr>
+                        <tr><td class="label">Potencia:</td><td class="valor">640 HP</td></tr>
+                        <tr><td class="label">Precio:</td><td class="valor">$240,000 USD</td></tr>
+                    </table>
+                </div>
             </div>
-            
-            
-            <div class="carro-tarjeta"><img src="carro2.jpg" alt="Carro 2"><div class="carro-info">Clásico Vintage</div></div>
-            <div class="carro-tarjeta"><img src="carro3.jpg" alt="Carro 3"><div class="carro-info">Superdeportivo Exótico</div></div>
-            <div class="carro-tarjeta"><img src="carro4.jpg" alt="Carro 4"><div class="carro-info">Sedán de Lujo</div></div>
-            <div class="carro-tarjeta"><img src="carro5.jpg" alt="Carro 5"><div class="carro-info">Todoterreno 4x4</div></div>
-            <div class="carro-tarjeta"><img src="carro6.jpg" alt="Carro 6"><div class="carro-info">Eléctrico Futurista</div></div>
-            <div class="carro-tarjeta"><img src="carro7.jpg" alt="Carro 7"><div class="carro-info">Alta Competencia</div></div>
-            <div class="carro-tarjeta"><img src="carro8.jpg" alt="Carro 8"><div class="carro-info">Muscle Car Americano</div></div>
-            <div class="carro-tarjeta"><img src="carro9.jpg" alt="Carro 9"><div class="carro-info">Compacto Urbano</div></div>
-            <div class="carro-tarjeta"><img src="carro10.jpg" alt="Carro 10"><div class="carro-info">Hiperdeportivo Conceptual</div></div>
+
+            <!-- Carro 2 -->
+            <div class="carro-tarjeta">
+                <img src="carro2.jpg" alt="Carro 2">
+                <div class="carro-ficha">
+                    <div class="carro-nombre">Clásico Vintage</div>
+                    <table class="detalles-tabla">
+                        <tr><td class="label">Color:</td><td class="valor">Azul Eléctrico</td></tr>
+                        <tr><td class="label">Potencia:</td><td class="valor">450 HP</td></tr>
+                        <tr><td class="label">Precio:</td><td class="valor">$85,000 USD</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Carro 3 -->
+            <div class="carro-tarjeta">
+                <img src="carro3.jpg" alt="Carro 3">
+                <div class="carro-ficha">
+                    <div class="carro-nombre">Hiperdeportivo</div>
+                    <table class="detalles-tabla">
+                        <tr><td class="label">Color:</td><td class="valor">Plata Satín</td></tr>
+                        <tr><td class="label">Potencia:</td><td class="valor">1500 HP</td></tr>
+                        <tr><td class="label">Precio:</td><td class="valor">$2,500,000 USD</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Carro 4 -->
+            <div class="carro-tarjeta">
+                <img src="carro4.jpg" alt="Carro 4">
+                <div class="carro-ficha">
+                    <div class="carro-nombre">Sedán Ejecutivo</div>
+                    <table class="detalles-tabla">
+                        <tr><td class="label">Color:</td><td class="valor">Negro Obsidiana</td></tr>
+                        <tr><td class="label">Potencia:</td><td class="valor">340 HP</td></tr>
+                        <tr><td class="label">Precio:</td><td class="valor">$95,000 USD</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Carro 5 -->
+            <div class="carro-tarjeta">
+                <img src="carro5.jpg" alt="Carro 5">
+                <div class="carro-ficha">
+                    <div class="carro-nombre">Todoterreno Premium</div>
+                    <table class="detalles-tabla">
+                        <tr><td class="label">Color:</td><td class="valor">Verde Militar</td></tr>
+                        <tr><td class="label">Potencia:</td><td class="valor">430 HP</td></tr>
+                        <tr><td class="label">Precio:</td><td class="valor">$110,000 USD</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Carro 6 -->
+            <div class="carro-tarjeta">
+                <img src="carro6.jpg" alt="Carro 6">
+                <div class="carro-ficha">
+                    <div class="carro-nombre">Eléctrico de Vanguardia</div>
+                    <table class="detalles-tabla">
+                        <tr><td class="label">Color:</td><td class="valor">Blanco Perla</td></tr>
+                        <tr><td class="label">Potencia:</td><td class="valor">500 HP</td></tr>
+                        <tr><td class="label">Precio:</td><td class="valor">$75,000 USD</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Carro 7 -->
+            <div class="carro-tarjeta">
+                <img src="carro7.jpg" alt="Carro 7">
+                <div class="carro-ficha">
+                    <div class="carro-nombre">Prototipo de Carreras</div>
+                    <table class="detalles-tabla">
+                        <tr><td class="label">Color:</td><td class="valor">Amarillo Racing</td></tr>
+                        <tr><td class="label">Potencia:</td><td class="valor">850 HP</td></tr>
+                        <tr><td class="label">Precio:</td><td class="valor">$550,000 USD</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Carro 8 -->
+            <div class="carro-tarjeta">
+                <img src="carro8.jpg" alt="Carro 8">
+                <div class="carro-ficha">
+                    <div class="carro-nombre">Muscle Car Moderno</div>
+                    <table class="detalles-tabla">
+                        <tr><td class="label">Color:</td><td class="valor">Gris Nardo</td></tr>
+                        <tr><td class="label">Potencia:</td><td class="valor">717 HP</td></tr>
+                        <tr><td class="label">Precio:</td><td class="valor">$90,000 USD</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Carro 9 -->
+            <div class="carro-tarjeta">
+                <img src="carro9.jpg" alt="Carro 9">
+                <div class="carro-ficha">
+                    <div class="carro-nombre">Urbano Deportivo</div>
+                    <table class="detalles-tabla">
+                        <tr><td class="label">Color:</td><td class="valor">Azul Marino</td></tr>
+                        <tr><td class="label">Potencia:</td><td class="valor">200 HP</td></tr>
+                        <tr><td class="label">Precio:</td><td class="valor">$35,000 USD</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Carro 10 -->
+            <div class="carro-tarjeta">
+                <img src="carro10.jpg" alt="Carro 10">
+                <div class="carro-ficha">
+                    <div class="carro-nombre">Concept Hypercar</div>
+                    <table class="detalles-tabla">
+                        <tr><td class="label">Color:</td><td class="valor">Oro Mate</td></tr>
+                        <tr><td class="label">Potencia:</td><td class="valor">1800 HP</td></tr>
+                        <tr><td class="label">Precio:</td><td class="valor">$3,000,000 USD</td></tr>
+                    </table>
+                </div>
+            </div>
+
         </div>
     </div>
 
