@@ -19,20 +19,27 @@
             text-align: center;
         }
 
+
+
+
+        
         /* --------------------------------------------------
            PANTALLA DE BIENVENIDA (PORTADA PRINCIPAL)
         ----------------------------------------------------- */
-        .pantalla-bienvenida {
+                .pantalla-bienvenida {
             width: 100%;
             height: 100vh;
-            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), url('portada.jpg') no-repeat center center/cover;
+            /* Usamos una imagen profesional de internet directamente */
+            background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.85)), 
+                        url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
-        }
+                }
+        
 
         .bienvenida-titulo {
             font-size: 3rem;
@@ -48,22 +55,29 @@
             text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
 
-        .btn-continuar {
+                .btn-continuar {
             background-color: #38bdf8;
             color: #0f172a;
             text-decoration: none;
-            padding: 15px 40px;
+            padding: 16px 45px;
             font-size: 1.2rem;
             font-weight: bold;
             border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
-            transition: transform 0.2s ease;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+            transition: all 0.3s ease; /* Hace que los cambios de movimiento sean suaves */
+        }
+
+        /* Efecto cuando pasas el cursor por encima (o lo tocas) */
+        .btn-continuar:hover {
+            transform: translateY(-3px); /* Sube un poquito el botón */
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.7); /* El brillo se hace más fuerte */
+            background-color: #ffffff; /* Cambia a blanco para un contraste premium */
         }
 
         .btn-continuar:active {
             transform: scale(0.95);
         }
-
+        
         /* --------------------------------------------------
            CONTENIDO PRINCIPAL (CATÁLOGO DE EXPOSICIÓN)
         ----------------------------------------------------- */
