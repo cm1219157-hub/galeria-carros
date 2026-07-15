@@ -319,5 +319,19 @@
         </div>
     </div>
 
+        <!-- SENSOR PARA APAGAR LA MÚSICA AL SALIR DE LA APP -->
+    <script>
+        document.addEventListener("visibilitychange", function() {
+            var musica = document.getElementById('musicaExposicion');
+            if (document.hidden) {
+                musica.pause(); // Pausa la música si sales de Google o bloqueas el cel
+            } else {
+                // Si quieres que la música NO vuelva a arrancar sola al regresar,
+                // borra la siguiente línea (musica.play();)
+                musica.play(); 
+            }
+        });
+    </script>
+    
 </body>
 </html>
