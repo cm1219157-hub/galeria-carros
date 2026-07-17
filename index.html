@@ -19,18 +19,14 @@
             text-align: center;
         }
 
-
-
-
-        
         /* --------------------------------------------------
            PANTALLA DE BIENVENIDA (PORTADA PRINCIPAL)
         ----------------------------------------------------- */
-              .pantalla-bienvenida {
+        .pantalla-bienvenida {
             position: relative;
             width: 100%;
             height: 100vh;
-            overflow: hidden; /* ¡ESTA LÍNEA ES CLAVE! Corta cualquier elemento que intente salirse de la portada */
+            overflow: hidden; /* Corta cualquier elemento que intente salirse de la portada */
             background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.85)), 
                         url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=1920') no-repeat center 85%/cover;
             display: flex;
@@ -39,22 +35,45 @@
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
-              }
-        
-
-         /* Estilo para tu nombre (sutil, elegante y legible) */
-        .firma-autor {
-            position: absolute;
-            top: 20px;      /* Distancia desde el borde superior */
-            right: 20px;    /* Distancia desde el borde derecho */
-            font-size: 0.85rem; /* Tamaño de letra pequeño y discreto */
-            color: #94a3b8;    /* Un tono gris claro que combina con el fondo sin saturar */
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para que sea legible sobre el fondo */
         }
 
-        
+        /* Contenedor que posiciona la firma en la esquina superior derecha de la portada */
+        .firma-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+            z-index: 10;
+        }
+
+        /* Estilo para tu nombre */
+        .firma-autor {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+            display: block; /* Para que el link baje correctamente */
+        }
+
+        /* Estilo para el link de más información */
+        .link-info {
+            font-size: 0.75rem;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        /* Efecto sutil al pasar el cursor o pulsar sobre el link */
+        .link-info:hover {
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
 
         .bienvenida-titulo {
             font-size: 3rem;
@@ -70,7 +89,7 @@
             text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
 
-                .btn-continuar {
+        .btn-continuar {
             background-color: #38bdf8;
             color: #0f172a;
             text-decoration: none;
@@ -79,14 +98,14 @@
             font-weight: bold;
             border-radius: 50px;
             box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
-            transition: all 0.3s ease; /* Hace que los cambios de movimiento sean suaves */
+            transition: all 0.3s ease;
         }
 
-        /* Efecto cuando pasas el cursor por encima (o lo tocas) */
+        /* Efecto cuando pasas el cursor por encima */
         .btn-continuar:hover {
-            transform: translateY(-3px); /* Sube un poquito el botón */
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.7); /* El brillo se hace más fuerte */
-            background-color: #ffffff; /* Cambia a blanco para un contraste premium */
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.7);
+            background-color: #ffffff;
         }
 
         .btn-continuar:active {
@@ -144,7 +163,7 @@
             display: block;
         }
 
-        /* Ficha Técnica (Tabla de especificaciones corregida y alineada) */
+        /* Ficha Técnica */
         .carro-ficha {
             padding: 20px;
         }
@@ -156,7 +175,7 @@
             margin-bottom: 12px;
             border-bottom: 2px solid #38bdf8;
             padding-bottom: 5px;
-            text-align: center; /* El nombre se queda centrado */
+            text-align: center;
         }
 
         .detalles-tabla {
@@ -174,12 +193,12 @@
         .detalles-tabla td.label {
             font-weight: 600;
             color: #94a3b8; 
-            text-align: left; /* Palabras a la izquierda */
+            text-align: left;
             width: 40%;
         }
 
         .detalles-tabla td.valor {
-            text-align: right; /* Datos numéricos a la derecha */
+            text-align: right;
             font-weight: bold;
             color: #38bdf8; 
             width: 60%;
@@ -188,24 +207,22 @@
 </head>
 <body>
 
-<!-- REPRODUCTOR DE MÚSICA ESCONDIDO -->
-<audio id="musicaExposicion" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
-    
+    <!-- REPRODUCTOR DE MÚSICA ESCONDIDO -->
+    <audio id="musicaExposicion" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
 
+    <!-- PORTADA PRINCIPAL COMPLETA -->
+    <div class="pantalla-bienvenida">
+        <!-- Tu contenedor de firma posicionado correctamente adentro -->
+        <div class="firma-container">
+            <span class="firma-autor">Elaborada por Cristofer Moreno</span>
+            <a href="https://cm1219157-hub.github.io/mi-pagina/" target="_blank" class="link-info">Más información</a>
+        </div>
 
-        <!-- PORTADA PRINCIPAL COMPLETA -->
-    <!-- Tu contenedor en la parte superior derecha -->
-<div class="firma-container">
-    <span class="firma-autor">Elaborada por Cristofer Moreno</span>
-    <br> <!-- Salto de línea para que el link quede abajo -->
-    <!-- Link directo a tu página web personal -->
-    <a href="https://cm1219157-hub.github.io/mi-pagina/" target="_blank" class="link-info">Más información</a>
-</div>
+        <h2 class="bienvenida-titulo">Mundo Automotriz</h2>
+        <p class="bienvenida-subtitulo">Colección de 10 ejemplares destacados en ingeniería y diseño</p>
+        <a href="#galeria-seccion" class="btn-continuar" onclick="document.getElementById('musicaExposicion').play();">Continuar</a>
+    </div>
         
-        
-    
-
-    
     <!-- CONTENIDO DE LA GALERÍA -->
     <div id="galeria-seccion">
         <div class="header-seccion">
@@ -217,8 +234,7 @@
         </div>
 
         <div class="galeria-contenedor">
-
-                                <!-- Carro 1: Tu Lamborghini Real -->
+            <!-- Carro 1: Tu Lamborghini Real -->
             <div class="carro-tarjeta">
                 <img src="carro1.jpg" alt="Lamborghini Huracán Tecnica">
                 <div class="carro-ficha">
@@ -231,7 +247,7 @@
                 </div>
             </div>
 
-                        <!-- Carro 2 -->
+            <!-- Carro 2 -->
             <div class="carro-tarjeta">
                 <img src="carro2.jpg" alt="Aston Martin Valkyrie">
                 <div class="carro-ficha">
@@ -309,7 +325,7 @@
                 </div>
             </div>
 
-                        <!-- Carro 8 -->
+            <!-- Carro 8 -->
             <div class="carro-tarjeta">
                 <img src="carro8.jpg" alt="McLaren 765LT Spider">
                 <div class="carro-ficha">
@@ -346,33 +362,28 @@
                         <tr><td class="label">Precio:</td><td class="valor">$500,000 USD</td></tr>
                     </table>
                 </div>
-                
             </div>
-            
         </div>
     </div>
 
-        <script>
-    const musica = document.getElementById('musicaExposicion');
+    <script>
+        const musica = document.getElementById('musicaExposicion');
 
-    // Escucha cuando la página se oculta o se muestra
-    document.addEventListener("visibilitychange", () => {
-        if (document.hidden) {
-            musica.pause();
-        } else {
-            // Solo intentamos reproducir si el usuario ya le había dado a "Continuar" antes
-            if (!musica.paused || musica.currentTime > 0) {
-                musica.play().catch(e => console.log("Esperando interacción"));
+        // Escucha cuando la página se oculta o se muestra
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+                musica.pause();
+            } else {
+                if (!musica.paused || musica.currentTime > 0) {
+                    musica.play().catch(e => console.log("Esperando interacción"));
+                }
             }
-        }
-    });
+        });
 
-    // Seguridad extra: también pausa si minimizas la ventana del navegador
-    window.addEventListener("blur", () => {
-        musica.pause();
-    });
-        </script>
-    
-    
+        // Seguridad extra: también pausa si minimizas la ventana
+        window.addEventListener("blur", () => {
+            musica.pause();
+        });
+    </script>
 </body>
 </html>
