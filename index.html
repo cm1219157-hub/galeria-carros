@@ -39,6 +39,18 @@
             padding: 20px;
             box-sizing: border-box;
                         }
+
+         /* Estilo para tu nombre (sutil, elegante y legible) */
+        .firma-autor {
+            position: absolute;
+            top: 20px;      /* Distancia desde el borde superior */
+            right: 20px;    /* Distancia desde el borde derecho */
+            font-size: 0.85rem; /* Tamaño de letra pequeño y discreto */
+            color: #94a3b8;    /* Un tono gris claro que combina con el fondo sin saturar */
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para que sea legible sobre el fondo */
+        }
         
         
 
@@ -181,6 +193,8 @@
 
         <!-- PORTADA PRINCIPAL COMPLETA -->
     <div class="pantalla-bienvenida">
+        <span class="firma-autor">Elaborada por Cristofer Moreno</span>
+        
         <h2 class="bienvenida-titulo">Mundo Automotriz</h2>
         <p class="bienvenida-subtitulo">Colección de 10 ejemplares destacados en ingeniería y diseño</p>
         <a href="#galeria-seccion" class="btn-continuar" onclick="document.getElementById('musicaExposicion').play();">Continuar</a>
